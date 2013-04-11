@@ -2154,7 +2154,7 @@ namespace mongo {
             }
         }
 
-        if (c->maintenanceMode() && theReplSet) {
+        if (c->maintenanceMode() && theReplSet && theReplSet->isSecondary()) {
             theReplSet->setMaintenanceMode(false);
         }
 
